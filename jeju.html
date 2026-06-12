@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🏝️ 济州岛旅行攻略 | 6.24-6.27</title>
+<style>
+:root {
+  --jeju-sea: #1a6b8a;
+  --jeju-sea-light: #e8f4f8;
+  --jeju-leaf: #4a9c5d;
+  --jeju-leaf-light: #edf7ef;
+  --jeju-sunset: #e8734a;
+  --jeju-sand: #faf6f0;
+  --jeju-stone: #5c5c5c;
+  --jeju-white: #ffffff;
+  --jeju-bg: #f2f6f8;
+  --jeju-border: #dde5ea;
+  --jeju-text: #2c3e50;
+  --jeju-text-light: #7f8c8d;
+  --jeju-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --jeju-radius: 14px;
+  --jeju-radius-sm: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: var(--jeju-bg);
+  color: var(--jeju-text);
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+}
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(160deg, #125b73 0%, #1a6b8a 30%, #218fa0 60%, #2a8a6e 100%);
+  color: white;
+  padding: 28px 20px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '🍊';
+  position: absolute;
+  top: -20px; right: 15px;
+  font-size: 70px;
+  opacity: 0.12;
+  transform: rotate(15deg);
+}
+.header::after {
+  content: '🌊';
+  position: absolute;
+  bottom: -30px; left: 10px;
+  font-size: 60px;
+  opacity: 0.10;
+}
+.header h1 { font-size: 24px; font-weight: 800; position:relative; z-index:1; letter-spacing: 1px; }
+.header .sub { font-size: 13px; opacity:0.88; margin-top: 6px; position:relative; z-index:1; }
+.header .badge-row { margin-top: 14px; display:flex; gap: 7px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; }
+.header .badge {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ── Quick Stats ── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background: white;
+  margin: -14px 14px 14px;
+  border-radius: var(--jeju-radius);
+  box-shadow: var(--jeju-shadow);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.stat-item {
+  text-align: center;
+  padding: 14px 6px;
+  border-right: 1px solid var(--jeju-border);
+  cursor: default;
+}
+.stat-item:last-child { border-right:none; }
+.stat-item .icon { font-size: 20px; display:block; margin-bottom:2px; }
+.stat-item .val { font-size: 12px; font-weight: 700; color: var(--jeju-sea); }
+.stat-item .lbl { font-size: 10px; color: var(--jeju-text-light); margin-top: 1px; }
+
+/* ── Tab Nav ── */
+.tab-nav-wrap {
+  position: sticky; top: 0; z-index: 90;
+  background: var(--jeju-bg);
+  padding: 6px 14px 10px;
+}
+.tab-nav {
+  display: flex; gap: 5px; overflow-x: auto;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  padding: 2px;
+}
+.tab-nav::-webkit-scrollbar { display:none; }
+.tab-btn {
+  flex-shrink:0; padding: 8px 15px; border:none; background: white;
+  border-radius: 22px; font-size: 13px; font-weight: 600; color: var(--jeju-stone);
+  cursor: pointer; white-space: nowrap; transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1.5px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab-btn:active { transform: scale(0.96); }
+.tab-btn.active {
+  background: var(--jeju-sea);
+  color: white;
+  border-color: var(--jeju-sea);
+  box-shadow: 0 3px 10px rgba(26,107,138,0.25);
+}
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+.container { max-width: 600px; margin: 0 auto; padding: 0 14px 100px; }
+
+/* ── Cards ── */
+.card {
+  background: white;
+  border-radius: var(--jeju-radius);
+  padding: 18px 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--jeju-shadow);
+  border: 1px solid var(--jeju-border);
+}
+.card h3 { font-size: 17px; margin-bottom: 2px; color: var(--jeju-text); }
+.card .card-sub { font-size: 12px; color: var(--jeju-text-light); margin-bottom: 14px; }
+.card-tag {
+  display: inline-block; padding: 3px 10px; border-radius: 12px;
+  font-size: 11px; font-weight: 700; color: white; margin-bottom: 6px;
+}
+.card-tag.east  { background: var(--jeju-sea); }
+.card-tag.city  { background: var(--jeju-sunset); }
+.card-tag.south { background: var(--jeju-leaf); }
+.card-tag.arrive { background: #8e6fc4; }
+
+/* ── Timeline ── */
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before {
+  content: ''; position: absolute; left: 9px; top: 4px; bottom: 4px;
+  width: 2px; background: linear-gradient(180deg, var(--jeju-sea), #2ab7b0, var(--jeju-leaf));
+  border-radius: 1px; opacity: 0.5;
+}
+.tl-item { position: relative; margin-bottom: 15px; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; left: -21px; top: 5px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: white; border: 2.5px solid var(--jeju-sea);
+}
+.tl-time { font-size: 11px; font-weight: 700; color: var(--jeju-sea); }
+.tl-title { font-size: 14px; font-weight: 600; margin: 2px 0; }
+.tl-detail { font-size: 12.5px; color: #555; line-height: 1.6; }
+.tl-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 4px; }
+.tl-tag {
+  font-size: 10px; padding: 2px 8px; border-radius: 10px;
+  background: var(--jeju-sea-light); color: var(--jeju-sea);
+}
+
+/* ── Info Boxes ── */
+.info-box {
+  border-radius: var(--jeju-radius-sm);
+  padding: 12px 14px; margin: 10px 0; font-size: 13px;
+}
+.info-box.tip  { background: var(--jeju-leaf-light); border-left: 3px solid var(--jeju-leaf); }
+.info-box.warn { background: #fff8f5; border-left: 3px solid var(--jeju-sunset); }
+.info-box.info { background: var(--jeju-sea-light); border-left: 3px solid var(--jeju-sea); }
+.info-box .info-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+
+/* ── Tables ── */
+.data-table {
+  width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0;
+}
+.data-table th {
+  background: #f4f7f9; padding: 9px 8px; text-align: left;
+  font-size: 11px; font-weight: 700; color: var(--jeju-stone);
+}
+.data-table td { padding: 9px 8px; border-bottom: 1px solid var(--jeju-border); }
+.data-table tr:last-child td { border-bottom: none; }
+
+.food-row {
+  border: 1px solid var(--jeju-border); border-radius: var(--jeju-radius-sm);
+  padding: 12px; margin-bottom: 7px;
+  background: #fcfdfd;
+}
+.food-row .fn { font-weight: 700; font-size: 14px; }
+.food-row .fm { font-size: 11px; color: var(--jeju-text-light); margin-top: 2px; }
+.food-row .fp { font-size: 13px; color: var(--jeju-sunset); font-weight: 600; margin-top: 3px; }
+
+.section-title {
+  font-size: 16px; font-weight: 800; padding: 20px 0 10px;
+  color: var(--jeju-text); display: flex; align-items: center; gap: 8px;
+}
+.section-title::after {
+  content: ''; flex:1; height: 1px; background: var(--jeju-border);
+}
+
+/* ── Floating Buttons ── */
+.float-actions {
+  position: fixed; bottom: 20px; right: 16px; z-index: 200;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.float-btn {
+  width: 48px; height: 48px; border-radius: 50%; border: none;
+  color: white; font-size: 22px; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  display: flex; align-items: center; justify-content: center;
+  transition: 0.2s; -webkit-tap-highlight-color: transparent;
+}
+.float-btn:active { transform: scale(0.92); }
+.float-btn.calc { background: var(--jeju-sea); }
+.float-btn.tax  { background: var(--jeju-leaf); }
+
+/* ── Modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset:0; z-index: 300;
+  background: rgba(0,0,0,0.45); align-items: flex-end; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-sheet {
+  background: white; border-radius: 20px 20px 0 0;
+  width: 100%; max-width: 600px; max-height: 85vh;
+  overflow-y: auto; padding: 20px 16px 30px;
+  animation: slideUp 0.25s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.modal-handle {
+  width: 36px; height: 4px; background: #ddd;
+  border-radius: 2px; margin: 0 auto 16px;
+}
+.modal-sheet h3 { font-size: 18px; margin-bottom: 14px; }
+
+/* ── Expense Calculator ── */
+.expense-form select,
+.expense-form input[type="text"],
+.expense-form input[type="number"] {
+  width: 100%; padding: 10px 12px; border: 1.5px solid var(--jeju-border);
+  border-radius: var(--jeju-radius-sm); font-size: 15px; margin-bottom: 8px;
+  background: var(--jeju-bg); -webkit-appearance: none; appearance: none;
+}
+.expense-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center;
+  padding-right: 32px;
+}
+.expense-form input:focus, .expense-form select:focus {
+  outline: none; border-color: var(--jeju-sea); background: white;
+}
+.expense-form .btn-row { display: flex; gap: 8px; }
+.expense-form .btn-row .btn { flex: 1; }
+.expense-form > div[style*="display:flex"] > input {
+  width: auto; flex: 1; min-width: 0;
+}
+.btn {
+  padding: 11px 16px; border: none; border-radius: var(--jeju-radius-sm);
+  font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { opacity: 0.8; }
+.btn-primary { background: var(--jeju-sea); color:white; }
+.btn-danger  { background: #f8f0f0; color:#c0392b; }
+.expense-summary { margin-top: 12px; }
+.expense-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 10px 0; border-bottom: 1px solid var(--jeju-border); font-size: 13px;
+}
+.expense-item .del-btn {
+  background: none; border: none; color: #c0392b; font-size: 22px;
+  cursor: pointer; padding: 6px 8px; line-height: 1; border-radius: 50%;
+  -webkit-tap-highlight-color: transparent; min-width: 36px; min-height: 36px;
+}
+.expense-item .del-btn:active { background: #fce8e8; }
+.total-row {
+  font-size: 16px; font-weight: 800; padding: 14px 0; color: var(--jeju-sea);
+  border-top: 2px solid var(--jeju-sea); margin-top: 8px;
+}
+
+/* ── Tax Free Note ── */
+.tax-note {
+  background: #fffbeb; border: 2px dashed #f0c040;
+  border-radius: var(--jeju-radius-sm); padding: 16px; margin-top: 10px;
+  text-align: center; display: none;
+}
+.tax-note.show { display: block; }
+.tax-note .big { font-size: 22px; font-weight: 800; color: var(--jeju-sunset); }
+.tax-note .eng { font-size: 16px; font-weight: 600; color: #555; margin: 4px 0 10px; }
+.tax-note .hint { font-size: 11px; color: #999; }
+
+/* ── Footer ── */
+.footer { text-align: center; padding: 24px 14px; color: #bbb; font-size: 11px; }
+
+/* ── Placeholder badge ── */
+.placeholder-badge {
+  display: inline-block; background: #fff3cd; color: #856404;
+  font-size: 10px; padding: 1px 6px; border-radius: 4px; margin-left: 4px;
+}
+
+@media (max-width: 380px) {
+  .header h1 { font-size: 20px; }
+  .tab-btn { padding: 7px 12px; font-size: 12px; }
+  .card { padding: 14px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <h1>🏝️ 济州岛旅行攻略</h1>
+  <div class="sub">三天四晚 · 经典 + 探店混合 · 四人自由行</div>
+  <div class="badge-row">
+    <span class="badge">📅 6.24 周二 – 6.27 周五</span>
+    <span class="badge">🏨 新罗舒泰 · 保健路</span>
+    <span class="badge">🌦️ 24-26°C · 梅雨季</span>
+  </div>
+</div>
+
+<!-- ═══════════ STATS ═══════════ -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="icon">🌡️</span><div class="val">24-26°C</div><div class="lbl">气温</div></div>
+  <div class="stat-item"><span class="icon">🌧️</span><div class="val">阵雨</div><div class="lbl">梅雨季</div></div>
+  <div class="stat-item"><span class="icon">💱</span><div class="val">1≈224</div><div class="lbl">RMB:KRW</div></div>
+  <div class="stat-item"><span class="icon">🕐</span><div class="val">+1h</div><div class="lbl">时差</div></div>
+</div>
+
+<!-- ═══════════ SEARCH BAR ═══════════ -->
+<div style="position:sticky;top:0;z-index:95;background:var(--jeju-bg);padding:6px 14px 8px;">
+  <input type="text" id="searchInput"
+    placeholder="🔍 搜索：黑猪肉 / 厕所 / 退税 / 牛岛 / 返点 / 便利店…"
+    oninput="searchPage()"
+    style="width:100%;padding:10px 16px;border:2px solid var(--jeju-border);border-radius:24px;font-size:14px;outline:none;background:white;transition:0.2s;-webkit-appearance:none;"
+    onfocus="this.style.borderColor='var(--jeju-sea)'"
+    onblur="this.style.borderColor='var(--jeju-border)'">
+</div>
+
+<!-- ═══════════ TAB NAV ═══════════ -->
+<div class="tab-nav-wrap">
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab('overview')">📋 总览</button>
+  <button class="tab-btn" onclick="switchTab('day1')">📅 Day1</button>
+  <button class="tab-btn" onclick="switchTab('day2')">📅 Day2</button>
+  <button class="tab-btn" onclick="switchTab('day3')">📅 Day3</button>
+  <button class="tab-btn" onclick="switchTab('food')">🍽️ 美食</button>
+  <button class="tab-btn" onclick="switchTab('shop')">🛍️ 购物</button>
+  <button class="tab-btn" onclick="switchTab('info')">📌 手册</button>
+</div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════ TAB: 总览 ═══════════════════ -->
+<div class="tab-content active" id="tab-overview">
+
+  <div class="card">
+    <h3>🗺️ 行程总览</h3>
+    <div class="card-sub">替换为你们的实际行程</div>
+    <table class="data-table">
+      <tr><th style="width:16%">日期</th><th style="width:12%">主题</th><th>核心内容</th><th style="width:16%">交通</th></tr>
+      <tr><td><b>6/24 周二</b></td><td>🛬 抵达</td><td>机场 → 酒店 → 东门市场夜市</td><td>🚕 出租 ¥30</td></tr>
+      <tr><td><b>6/25 周三</b></td><td>🐮 东线</td><td>牛岛环岛 → 城山日出峰 → 涉地可支</td><td>🚗 包车 ¥800</td></tr>
+      <tr><td><b>6/26 周四</b></td><td>🏙️ 市区+南线</td><td>牧官衙+东门市场 → 柱状节理带+天帝渊+偶来市场</td><td>🚌 601路</td></tr>
+      <tr><td><b>6/27 周五</b></td><td>✈️ 返程</td><td>免税店补货 → 机场退税 → 返程</td><td>🚕 出租 ¥30</td></tr>
+    </table>
+  </div>
+
+  <div class="card" id="budgetCard">
+    <h3>💰 人均预算（不含购物）</h3>
+    <div class="card-sub" id="budgetSub">在「每日花费计算器」中记账 → 数字自动同步到这里</div>
+    <table class="data-table">
+      <tr><td>✈️ 往返机票</td><td style="text-align:right" id="budgetFlight">—</td></tr>
+      <tr><td>🛏️ 酒店 3 晚（新罗舒泰）</td><td style="text-align:right" id="budgetHotel">—</td></tr>
+      <tr><td>🍽️ 餐饮 4 天（含咖啡零食）</td><td style="text-align:right" id="budgetFood">—</td></tr>
+      <tr><td>🚗 交通（包车+公交+打车）</td><td style="text-align:right" id="budgetTrans">—</td></tr>
+      <tr><td>🎫 门票 / 船票</td><td style="text-align:right" id="budgetTicket">—</td></tr>
+      <tr><td>📱 WiFi / 流量卡</td><td style="text-align:right" id="budgetWifi">—</td></tr>
+      <tr style="font-weight:700; background:var(--jeju-sea-light);"><td>💎 人均合计</td><td style="text-align:right; color:var(--jeju-sea);" id="budgetTotal">—</td></tr>
+    </table>
+    <div style="font-size:11px;color:#999;margin-top:6px;">💡 点右下角 💵 打开计算器记账，金额自动汇总到这里。购物不包含在内。</div>
+  </div>
+
+  <div class="card">
+    <h3>✅ 出发前检查清单</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:13px;">
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 护照（有效期 > 6 个月）</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 打印酒店预订单</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 机票行程单</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 国际驾照（租车）/ 包车预订</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> T-money 交通卡</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 韩元现金（人均 ¥1,500）</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 德标转换插头 🔌</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 防晒霜 SPF50+</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 折叠伞 + 轻便雨衣</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 防水运动鞋</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 充电宝</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 下载 Naver Map + Papago</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 联系返点公司</label>
+      <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 预订东线包车</label>
+    </div>
+  </div>
+
+  <div class="info-box warn">
+    <div class="info-title">⚠️ 三个最重要的提醒</div>
+    ① 酒店<b>不含早餐</b>：楼下 GS25（步行 10 秒）+ CU（步行 1 分钟）解决<br>
+    ② 东线<b>建议包车</b>不要自驾：¥800/天，4 人分摊人均 ¥200<br>
+    ③ 6 月底<b>梅雨季</b>：济州最早入梅（6.19 – 7.20），带好雨具
+  </div>
+
+  <div class="card" style="background:var(--jeju-sea-light);border:1.5px dashed var(--jeju-sea);">
+    <h3>📱 朋友们如何用手机打开？（iPhone 实测）</h3>
+
+    <div style="font-weight:700;margin:10px 0 4px;color:var(--jeju-sea);">📱 方式A：微信群发文件 → 存到文件 App（iPhone 推荐）</div>
+    <div style="font-size:12.5px;color:#555;margin-bottom:8px;">
+      ① 微信群里收到 .html 文件 → 点开 → 右上角「…」→ <b>「存储到文件」</b><br>
+      ② 打开 iPhone 自带的 <b>「文件」App</b> → 找到保存的文件 → 点一下<b>自动渲染成网页</b><br>
+      ③ 右下角 ⬆️ 分享 → <b>「在 Safari 中打开」</b> → 再点 ⬆️ → <b>「添加到主屏幕」</b> ✅<br>
+      💡 从「文件」App 的分享菜单里 Safari 会正常出现（Apple 自家 App，不受微信限制）
+    </div>
+
+    <div style="font-weight:700;margin:10px 0 4px;color:var(--jeju-sea);">📧 方式B：邮件附件（最稳妥·100% 成功）</div>
+    <div style="font-size:12.5px;color:#555;margin-bottom:8px;">
+      电脑打开 <b>icloud.com</b> → 登录 Apple ID → 邮件 → 把 HTML 作为附件发给自己<br>
+      → iPhone 自带「邮件」App → 点附件 → <b>自动 Safari 打开</b> → 添加到主屏幕 ✅<br>
+    </div>
+
+    <div style="font-weight:700;margin:10px 0 4px;color:var(--jeju-sea);">🤖 方式C：Android 朋友</div>
+    <div style="font-size:12.5px;color:#555;margin-bottom:8px;">
+      下载「ES文件浏览器」等文件管理器 → 用其内置浏览器打开 HTML → 完整渲染 ✅
+    </div>
+
+    <div class="info-box warn" style="margin-top:8px;">
+      <div class="info-title">⚠️ 微信不能直接渲染 HTML！</div>
+      微信点开 .html 文件会显示<b>源代码而不是网页</b>。这不是操作问题，是微信的限制。<br>
+      用上面的「存储到文件」或「邮件」方式即可绕过。
+    </div>
+
+    <div class="info-box tip">
+      <div class="info-title">🍎 「添加到主屏幕」步骤</div>
+      Safari 打开 → 底部 ⬆️ → <b>往下滑</b> → <b>「添加到主屏幕」</b>（灰色➕方块图标）→ 命名 → 添加。<br>
+      ⚠️ 注意不是「添加书签」！往下滑才能看到「添加到主屏幕」。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: Day1 东线 ═══════════════════ -->
+<div class="tab-content" id="tab-day1">
+
+  <div class="card">
+    <span class="card-tag east">DAY 1 · 东线全日</span>
+    <h3>🐮 牛岛 + 城山日出峰 + 涉地可支</h3>
+    <div class="card-sub">6 月 25 日 周三 · 7:00 出发 · 全程约 12 小时 · [替换为实际安排]</div>
+
+    <div class="info-box info">
+      <div class="info-title">🚗 交通：包车 ¥800/天</div>
+      酒店（保健路）→ 城山港码头 50km，约 1 小时。<br>
+      中国驾照翻译件韩国<b>不认可</b>，建议淘宝/携程订中文包车，4 人分摊。
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">⏰ 7:00</div>
+        <div class="tl-title">🚗 酒店 → 城山港码头</div>
+        <div class="tl-detail">车程约 1 小时。出发前用酒店大堂厕所（一楼前台旁）。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 8:00 – 8:30</div>
+        <div class="tl-title">🛥️ 乘船前往牛岛</div>
+        <div class="tl-detail">填乘船申请书 → 持护照购票。往返 ₩10,500/人 · 15 分钟 · 30 分钟一班。<br>🚻 售票大厅右侧公厕 · Naver 搜：<b>성산항 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 8:30 – 13:00</div>
+        <div class="tl-title">🚲 牛岛环岛骑行（~4h）</div>
+        <div class="tl-detail">租电动自行车 ₩10,000-15,000/人（往里走更便宜，可砍价）<br>⚠️ 只收现金！<br>路线：西滨白沙滩 → 黑沙滩 → 牛岛峰灯塔 → 彩色渔村 → 海女之家午餐 → Blanc Rocher 咖啡<br>🚻 全岛免费公厕 · Naver 搜：<b>우도 화장실</b></div>
+        <div class="tl-tags"><span class="tl-tag">📸 西滨白沙滩</span><span class="tl-tag">📸 牛岛峰灯塔</span><span class="tl-tag">🍜 海女之家</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 13:00 – 13:30</div>
+        <div class="tl-title">🛥️ 返程城山港</div>
+        <div class="tl-detail">⚠️ 末班船约 18:00，天气恶劣可能停航。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 13:30 – 15:00</div>
+        <div class="tl-title">🌄 城山日出峰</div>
+        <div class="tl-detail">世界自然遗产 · 门票 ₩6,000<br>登顶 40 分钟（《鬼怪》取景地）/ 免费路线看海女表演（14:00）<br>📸 西侧悬崖广角 / 牵手阶梯（第三个阶梯）<br>🚻 售票处旁 + 免费路线入口 + 半山腰 · Naver 搜：<b>성산일출봉 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 15:00 – 16:30</div>
+        <div class="tl-title">⛪ 涉地可支（免费）</div>
+        <div class="tl-detail">安藤忠雄建筑 + 白色灯塔 + 黑色火山岩海岸<br>📸 落日前 2h 拍灯塔剪影<br>🚻 停车场北侧公厕 · Naver 搜：<b>섭지코지 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 17:00 – 18:00</div>
+        <div class="tl-title">🍖 回程晚餐</div>
+        <div class="tl-detail">回市区吃「三姓穴黑猪肉」或「Dombe豚」，详见「美食」标签。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: Day2 市区+南线 ═══════════════════ -->
+<div class="tab-content" id="tab-day2">
+
+  <div class="card">
+    <span class="card-tag city">DAY 2 上午 · 市区</span>
+    <h3>🏙️ 济州市区探索</h3>
+    <div class="card-sub">6 月 26 日 周四 · 8:30 – 12:30 · [替换为实际安排]</div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">⏰ 8:30 – 9:15</div>
+        <div class="tl-title">🍙 便利店早餐</div>
+        <div class="tl-detail">酒店楼下 GS25（步行 10 秒）或门口左侧 CU（步行 1 分钟）。详见「美食」标签。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 9:30 – 11:00</div>
+        <div class="tl-title">🏛️ 牧官衙 + 东门市场</div>
+        <div class="tl-detail">牧官衙门票 ₩1,500 → 步行 5 分钟到东门市场，活鲜区自选海鲜<br>🚻 牧官衙入口右侧 / 东门市场东门公厕（较脏）</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 11:00 – 12:30</div>
+        <div class="tl-title">🛍️ 保健路逛街</div>
+        <div class="tl-detail">酒店正对面，逛 Olive Young、ABC Mart、Folder。<br>🚻 Olive Young 店内 / 星巴克（酒店旁 50m）/ 莲洞居民中心 24h 公厕</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="card-tag south">DAY 2 下午 · 南线</span>
+    <h3>🌋 西归浦精华半日</h3>
+    <div class="card-sub">6 月 26 日 周四 · 13:00 – 19:30 · [替换为实际安排]</div>
+
+    <div class="info-box info">
+      <div class="info-title">🚌 交通</div>
+      酒店附近「汉拿医院站」乘 601 路直达，70-80 分钟，₩4,500。<br>4 人可打车/包车半天约 ¥300-400。
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">⏰ 13:00 – 14:15</div>
+        <div class="tl-title">🚌 出发 → 中文观光区</div>
+        <div class="tl-detail">601 路约 30 分钟一班，车上吃便当/饭团。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 14:15 – 15:00</div>
+        <div class="tl-title">🪨 柱状节理带</div>
+        <div class="tl-detail">门票 ₩2,000 · 六角形玄武岩柱群<br>📸 入口左侧免费偶来小路<br>🚻 售票处右侧 + 偶来小路起点 · Naver 搜：<b>대포주상절리 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 15:15 – 16:15</div>
+        <div class="tl-title">💦 天帝渊瀑布</div>
+        <div class="tl-detail">门票 ₩2,000-3,000 · 三层瀑布常现彩虹 🌈<br>⚠️ 天帝渊 ≠ 天地渊！<br>🚻 正门入口左侧 + 第一/第二瀑布观景台 · Naver 搜：<b>천제연폭포 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 16:30 – 18:00</div>
+        <div class="tl-title">🛒 西归浦偶来市场</div>
+        <div class="tl-detail">橘子大福（市场正中心 ¥25）、黑猪肉串、生鱼片<br>🚻 停车场方向（东南角）· Naver 搜：<b>서귀포매일올레시장 화장실</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 18:00 – 19:30</div>
+        <div class="tl-title">🚌 返回 + 晚餐</div>
+        <div class="tl-detail">601 路返回或打车（₩35,000-45,000）。晚餐「Baro猪蹄」辣味或「Dombe豚」。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: Day3 返程 ═══════════════════ -->
+<div class="tab-content" id="tab-day3">
+
+  <div class="card">
+    <span class="card-tag arrive">DAY 3 · 返程日</span>
+    <h3>✈️ 最后购物 + 机场退税 + 返程</h3>
+    <div class="card-sub">6 月 27 日 周五 · 根据航班时间调整 · [替换为实际安排]</div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">⏰ 上午</div>
+        <div class="tl-title">🍙 便利店早餐 + 🛍️ 新罗免税店补货</div>
+        <div class="tl-detail">楼下 GS25 → 步行 4 分钟到新罗免税店（老莲路 69 号）<br>酒店可赠金卡（4 楼办理），推荐 MLB 帽子、Gentle Monster。<br>💡 提前 APP 下单更便宜！详见「购物」标签。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 起飞前 3h</div>
+        <div class="tl-title">🚕 前往济州机场</div>
+        <div class="tl-detail">酒店打车 10 分钟，₩4,000-6,000。⚠️ 走正规出租车！</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 机场</div>
+        <div class="tl-title">💰 退税操作</div>
+        <div class="tl-detail">① 安检前找退税 KIOSK 机器（3 号门附近）→ ② 扫护照+小票 → ③ 安检后人工柜台 → ④ 选支付宝到账<br>⚠️ 5 号登机口机器是<b>国内出发</b>用的！</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">⏰ 安检后</div>
+        <div class="tl-title">📦 免税品提货</div>
+        <div class="tl-detail">出示护照+提货单。机场 Olive Young 部分比市内便宜。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: 美食全集 ═══════════════════ -->
+<div class="tab-content" id="tab-food">
+
+  <!-- 便利店早餐 -->
+  <div class="section-title">🏪 便利店早餐（酒店不含早）</div>
+  <div class="card">
+    <div class="card-sub">酒店楼下 GS25（步行 10 秒）+ 左侧 CU（步行 1 分钟）· 24h · 人均 ¥15-30 · [替换为实际花费]</div>
+    <table class="data-table">
+      <tr><th>预算</th><th>组合</th><th>KRW</th><th>≈¥</th><th>购于</th></tr>
+      <tr><td>💰 省钱</td><td>三角饭团（金枪鱼）🍙 + 香蕉牛奶 🥛</td><td>₩3,200</td><td>¥16</td><td>GS25/CU</td></tr>
+      <tr><td>🥪 均衡</td><td>蛋沙拉三明治 🥪 + 冰美式 ☕</td><td>₩4,500</td><td>¥23</td><td>GS25/CU</td></tr>
+      <tr><td>🍱 饱足</td><td>金惠子便当 🍱 + 青葡萄汁 🍇</td><td>₩6,000</td><td>¥30</td><td>GS25</td></tr>
+      <tr><td>🍰 网红</td><td>延世生乳包 🥐 + 咖啡冰杯 🧊</td><td>₩4,800</td><td>¥25</td><td>CU</td></tr>
+    </table>
+    <table class="data-table" style="margin-top:8px;">
+      <tr><th>店</th><th>必买</th><th>价格</th></tr>
+      <tr><td>🟢 GS25（楼下）</td><td>金惠子便当 / 圣水 Bagel / 三角饭团</td><td>₩1,500-4,500</td></tr>
+      <tr><td>🔴 CU（左侧）</td><td>延世生乳包（独家·限量）/ 济州绿茶马卡龙</td><td>₩2,500-2,800</td></tr>
+    </table>
+    <div class="info-box tip" style="margin-top:8px;">
+      <div class="info-title">💡 贴士</div>
+      饭团按编号撕开→微波 10-20 秒；上午去买最全；济州限定款只在济州能买到！
+    </div>
+  </div>
+
+  <!-- 黑猪肉 -->
+  <div class="section-title">🥩 黑猪肉烤肉</div>
+  <div class="card">
+    <div class="food-row"><div class="fn">🐷 [店名占位] — 本地人首选</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+    <div class="food-row"><div class="fn">🐷 [店名占位]</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+    <div class="food-row"><div class="fn">🐷 [店名占位]</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+    <div class="info-box tip" style="margin-top:8px;">
+      <div class="info-title">🔑 辨别本地店 vs 网红店</div>
+      ✅ 鲜肉(생살) · 韩国客人 >80% · 按斤卖 · 小菜花样多<br>
+      ❌ 冷冻肉(냉동) · 游客为主 · 按份卖 · 统一辣白菜
+    </div>
+  </div>
+
+  <!-- 猪蹄 / 海鲜 / 小吃 -->
+  <div class="section-title">🐷 猪蹄 · 🦪 海鲜 · 🏪 市场小吃</div>
+  <div class="card">
+    <div class="food-row"><div class="fn">🐷 [猪蹄店名占位]</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+    <div class="food-row"><div class="fn">🦪 [鲍鱼粥店名占位]</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+    <div class="food-row"><div class="fn">🦪 [海鲜店名占位]</div><div class="fm">📍 [地址占位] · [特色描述占位]</div><div class="fp">人均 ₩[价格] / ¥[价格]</div></div>
+  </div>
+
+  <div class="section-title">☕ 咖啡 · 🚫 避雷</div>
+  <div class="card">
+    <div class="food-row"><div class="fn">☕ [咖啡店名占位]</div><div class="fm">📍 [位置占位] · [特色占位]</div></div>
+    <div class="food-row"><div class="fn">☕ [咖啡店名占位]</div><div class="fm">📍 [位置占位] · [特色占位]</div></div>
+    <div style="font-weight:700;margin:12px 0 6px;color:var(--jeju-sunset);">🚫 避雷</div>
+    <div style="font-size:12.5px;color:#555;">
+      ❌ 黑猪肉街网红店（冷冻肉）<br>❌ 东门市场门口拉客加工店<br>❌ 出租车司机推荐餐厅<br>❌ 网红橘子巧克力（山东代工）
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: 购物退税 ═══════════════════ -->
+<div class="tab-content" id="tab-shop">
+
+  <div class="section-title">📊 免税 vs 退税 vs 返点</div>
+  <div class="card">
+    <table class="data-table">
+      <tr><th></th><th>免税店</th><th>退税店</th><th>返点 SG</th></tr>
+      <tr><td>代表</td><td>乐天、新罗</td><td>Olive Young、ABC Mart</td><td>免税店内</td></tr>
+      <tr><td>方式</td><td>购买时已免</td><td>满 ₩15,000 机场退</td><td>购物后返 20-40%</td></tr>
+      <tr><td>提货</td><td>本土带走 / 国际机场提</td><td>直接带走</td><td>同免税店</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title">💰 返点流程</div>
+  <div class="card">
+    <table class="data-table">
+      <tr><td><b>①</b></td><td>出发前至少 1 天 <b>淘宝搜"济州岛免税店返点"</b>，提交护照+机票，拿团号</td></tr>
+      <tr><td><b>②</b></td><td>到免税店先办金卡（85-95 折），酒店可能赠送</td></tr>
+      <tr><td><b>③</b></td><td>结账时出示「金卡+团号」，核对小票团号</td></tr>
+      <tr><td><b>④</b></td><td>小票拍照发返点公司</td></tr>
+      <tr><td><b>⑤</b></td><td>离境后 1-3 个工作日返现到账</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title">🧾 机场退税操作</div>
+  <div class="card">
+    <table class="data-table">
+      <tr><td><b>①</b></td><td>机场出发层 → 找退税 KIOSK 机器（安检前！3 号门附近）</td></tr>
+      <tr><td><b>②</b></td><td>扫护照 + 扫退税小票</td></tr>
+      <tr><td><b>③</b></td><td>过安检 → 人工柜台/自助机</td></tr>
+      <tr><td><b>④</b></td><td>选支付宝到账（推荐，实时）</td></tr>
+    </table>
+
+    <!-- Tax Free 纸条生成器 -->
+    <div style="text-align:center;margin-top:14px;">
+      <button class="btn btn-primary" onclick="generateTaxNote()" style="flex:none;padding:12px 28px;font-size:15px;">
+        🧾 一键生成 "我要 Tax Free" 纸条
+      </button>
+    </div>
+    <div class="tax-note" id="taxNote">
+      <div class="big">我要 Tax Free！</div>
+      <div class="eng">Tax Free, please! 🧾</div>
+      <div style="font-size:13px;color:#555;">여기 tax free 해주세요</div>
+      <div class="hint">↑ 出示此页面给店员看即可 · 截图保存更方便</div>
+    </div>
+  </div>
+
+  <div class="section-title">🏆 最省钱策略</div>
+  <div class="card">
+    <div class="info-box tip">
+      ① 出发前 <b>免税店 APP</b> 下单（折扣最大）→ 机场提货<br>
+      ② 实体店办金卡+挂团号 → 买需试的商品 → 享返点<br>
+      ③ 街边退税店（Olive Young）买本土好物 → 机场退税<br>
+      ④ 机场 Olive Young 最后补货
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TAB: 实用手册 ═══════════════════ -->
+<div class="tab-content" id="tab-info">
+
+  <!-- 酒店周边 -->
+  <div class="section-title">🏨 酒店周边 · 保健路生活圈</div>
+  <div class="card">
+    <div class="card-sub">新罗舒泰酒店 · 연동 274-16 · [替换为实际酒店]</div>
+
+    <div style="font-weight:700;margin:10px 0 4px;color:var(--jeju-sea);">🏪 便利店（24h）</div>
+    <table class="data-table">
+      <tr><td>🟢 GS25</td><td>酒店楼下</td><td>步行 10 秒</td></tr>
+      <tr><td>🔴 CU</td><td>出门左侧</td><td>步行 1 分钟</td></tr>
+      <tr><td>🟢/🔴 GS25/CU</td><td>马路对面</td><td>步行 2 分钟</td></tr>
+    </table>
+
+    <div style="font-weight:700;margin:12px 0 4px;color:var(--jeju-leaf);">🚻 周边厕所</div>
+    <table class="data-table">
+      <tr><td>🏨 酒店大堂</td><td>一楼前台旁</td><td>✅ 免费 · 出门前必用</td></tr>
+      <tr><td>🏬 新罗免税店</td><td>步行 4 分钟 · 各楼层·4F 人少</td><td>✅ 干净免费</td></tr>
+      <tr><td>☕ 星巴克</td><td>出门右转 50m</td><td>⚠️ 消费后小票密码</td></tr>
+      <tr><td>🏛️ 莲洞居民中心</td><td>步行 8 分钟</td><td>✅ 24h 免费公厕</td></tr>
+    </table>
+
+    <div style="font-weight:700;margin:12px 0 4px;color:var(--jeju-sunset);">🛍️ 购物步行距离</div>
+    <table class="data-table">
+      <tr><td>保健路步行街</td><td>过马路即到</td></tr>
+      <tr><td>新罗免税店</td><td>320m · 4 分钟</td></tr>
+      <tr><td>Olive Young</td><td>5-8 分钟</td></tr>
+      <tr><td>乐天免税店</td><td>700m · 15 分钟</td></tr>
+    </table>
+  </div>
+
+  <!-- 厕所大全 -->
+  <div class="section-title">🚻 全景点厕所定位</div>
+  <div class="card">
+    <div class="card-sub">打开 Naver Map → 复制韩文关键词 → 精准导航</div>
+    <table class="data-table">
+      <tr><th>地点</th><th>具体位置</th><th>Naver 搜</th></tr>
+      <tr><td>🏨 酒店</td><td>一楼大堂前台旁</td><td>신라스테이 제주</td></tr>
+      <tr><td>✈️ 机场</td><td>出发层 3 号门 / 安检前左侧 / 候机区</td><td>제주국제공항 화장실</td></tr>
+      <tr><td>🛥️ 城山港</td><td>售票大厅右侧</td><td>성산항 화장실</td></tr>
+      <tr><td>🏝️ 牛岛</td><td>天津港 / 西滨白沙滩入口 / 灯塔停车场 / Blanc Rocher</td><td>우도 화장실</td></tr>
+      <tr><td>🌄 日出峰</td><td>售票处旁 + 免费路线入口 + 半山腰</td><td>성산일출봉 화장실</td></tr>
+      <tr><td>⛪ 涉地可支</td><td>停车场北侧 / 艺术馆内</td><td>섭지코지 화장실</td></tr>
+      <tr><td>🏛️ 牧官衙</td><td>入口售票处右侧</td><td>제주목관아 화장실</td></tr>
+      <tr><td>🐟 东门市场</td><td>东门入口（较脏）/ 附近 Ediya Coffee</td><td>동문시장 화장실</td></tr>
+      <tr><td>🪨 柱状节理带</td><td>售票处右侧 + 偶来小路起点</td><td>대포주상절리 화장실</td></tr>
+      <tr><td>💦 天帝渊瀑布</td><td>正门左侧 + 第一/二瀑布观景台</td><td>천제연폭포 화장실</td></tr>
+      <tr><td>🛒 偶来市场</td><td>停车场方向（东南角）</td><td>서귀포매일올레시장 화장실</td></tr>
+      <tr><td>🏖️ 咸德海滩</td><td>Cafe Delmoondo / 淋浴厕所（投币 ₩500）</td><td>함덕해수욕장 화장실</td></tr>
+      <tr><td>🏖️ 月汀里</td><td>Mou Moon Cafe（小票密码）/ 停车场旁</td><td>월정리해수욕장 화장실</td></tr>
+    </table>
+  </div>
+
+  <!-- 交通 + 天气 + 出片 + App -->
+  <div class="section-title">🚌 交通</div>
+  <div class="card">
+    <table class="data-table">
+      <tr><td>T-money 卡</td><td>机场便利店买 · 工本费 ₩4,000 · 建议充 ₩20,000</td></tr>
+      <tr><td>601 路</td><td>市区 ↔ 中文观光区（南线）· ₩4,500 · 30 分一班</td></tr>
+      <tr><td>出租车</td><td>市区短途 ₩4,000-8,000</td></tr>
+      <tr><td>包车</td><td>¥800/天 · 淘宝/携程订</td></tr>
+      <tr><td>⚠️ 避雷</td><td>黑色模范出租车 · 路边黑车 · 司机推荐餐厅</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title">🌦️ 天气穿搭 · 📸 出片 · 📱 App</div>
+  <div class="card">
+    <table class="data-table">
+      <tr><td>🌡️</td><td>24-26°C · 梅雨 6.19-7.20 · 湿度 70-80%</td></tr>
+      <tr><td>👕</td><td>速干短袖 ×3 + 薄外套 ×1 + 防水鞋 + 雨衣</td></tr>
+    </table>
+    <table class="data-table" style="margin-top:8px;">
+      <tr><th>景点</th><th>最佳机位</th><th>时间</th></tr>
+      <tr><td>牛岛</td><td>西滨白沙滩 / 灯塔</td><td>下午 2-4 点</td></tr>
+      <tr><td>日出峰</td><td>西侧悬崖 / 牵手阶梯</td><td>清晨</td></tr>
+      <tr><td>涉地可支</td><td>白色灯塔</td><td>落日前 2h</td></tr>
+    </table>
+    <table class="data-table" style="margin-top:8px;">
+      <tr><td>🗺️ Naver Map</td><td>查公交+导航+找厕所</td></tr>
+      <tr><td>🌐 Papago</td><td>韩语翻译最准</td></tr>
+      <tr><td>🚕 Kakao T</td><td>打车（可能需韩国号）</td></tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- container -->
+
+<!-- ═══════════ FLOATING BUTTONS ═══════════ -->
+<div class="float-actions">
+  <button class="float-btn calc" onclick="openCalc()" title="每日花费计算器">💵</button>
+  <button class="float-btn tax" onclick="quickTaxNote()" title="Tax Free 纸条">🧾</button>
+</div>
+
+<!-- ═══════════ EXPENSE CALCULATOR MODAL ═══════════ -->
+<div class="modal-overlay" id="calcModal">
+  <div class="modal-sheet" id="calcSheet">
+    <div class="modal-handle"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h3 style="margin:0;">💵 每日花费计算器</h3>
+      <button onclick="document.getElementById('calcModal').classList.remove('show')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 8px;">✕</button>
+    </div>
+    <div class="card-sub" style="margin-bottom:14px;">汇率 ≈ 1:195 · 同时输入韩元和人民币时优先用人民币计算</div>
+
+    <div class="expense-form" id="expenseForm" onsubmit="return false;">
+      <select id="expDay">
+        <option value="6/24">6/24 周二 · 抵达日</option>
+        <option value="6/25">6/25 周三 · 东线</option>
+        <option value="6/26">6/26 周四 · 市区+南线</option>
+        <option value="6/27">6/27 周五 · 返程日</option>
+      </select>
+      <select id="expPerson">
+        <option value="我">我</option><option value="朋友A">朋友A</option><option value="朋友B">朋友B</option><option value="朋友C">朋友C</option>
+      </select>
+      <select id="expCat">
+        <option value="✈️ 机票">✈️ 机票</option><option value="🛏️ 酒店">🛏️ 酒店</option><option value="🍽️ 餐饮">🍽️ 餐饮</option><option value="🚗 交通">🚗 交通</option><option value="🎫 门票">🎫 门票</option><option value="🛍️ 购物">🛍️ 购物</option><option value="☕ 咖啡零食">☕ 咖啡零食</option><option value="📱 通讯">📱 通讯</option><option value="💊 其他">💊 其他</option>
+      </select>
+      <input type="text" id="expDesc" placeholder="描述（如：牛岛船票）">
+      <div style="display:flex;gap:4%;">
+        <input type="number" id="expKRW" placeholder="韩元 ₩" style="flex:1;">
+        <input type="number" id="expCNY" placeholder="人民币 ¥" style="flex:1;">
+      </div>
+      <div class="btn-row" style="margin-top:10px;">
+        <button class="btn btn-primary" id="btnAddExpense">➕ 添加记录</button>
+        <button class="btn" style="background:#f0f0f0;color:#666;" id="btnClearExpenses">🗑️ 清空全部</button>
+      </div>
+    </div>
+
+    <div class="expense-summary" id="expenseList"></div>
+    <div class="total-row" id="expenseTotal"></div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  🏝️ 济州岛旅行攻略 · 6.24 – 6.27<br>💡 保存到手机主屏幕，离线也能用
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+// ── Tab Switching ──
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  var map={overview:0,day1:1,day2:2,day3:3,food:4,shop:5,info:6};
+  document.querySelectorAll('.tab-btn')[map[name]].classList.add('active');
+  window.scrollTo({top:200,behavior:'smooth'});
+  document.getElementById('taxNote').classList.remove('show');
+}
+
+// ── Search ──
+function searchPage() {
+  var q = document.getElementById('searchInput').value.toLowerCase().trim();
+  if (!q) return;
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.add('active'));
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  var node;
+  while (node = walker.nextNode()) {
+    if (node.textContent.toLowerCase().includes(q)) {
+      node.parentElement.scrollIntoView({behavior:'smooth',block:'center'});
+      var el = node.parentElement;
+      el.style.transition = '0.15s';
+      el.style.background = '#fff59d';
+      setTimeout(function(){ el.style.background = ''; }, 1500);
+      break;
+    }
+  }
+}
+
+// ── Tax Free Note Generator ──
+function generateTaxNote() {
+  var note = document.getElementById('taxNote');
+  note.classList.toggle('show');
+  if (note.classList.contains('show')) {
+    note.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function quickTaxNote() {
+  switchTab('shop');
+  setTimeout(function(){
+    document.getElementById('taxNote').classList.add('show');
+    document.getElementById('taxNote').scrollIntoView({behavior:'smooth',block:'center'});
+  },300);
+}
+
+// ── Expense Calculator ──
+var STORAGE_KEY = 'jeju_expenses_2025';
+var RATE = 224; // 1 CNY ≈ 224 KRW（2026年6月央行中间价）
+var _calcReady = false;
+
+// Wait for DOM before binding
+function initCalculator() {
+  if (_calcReady) return;
+  var addBtn = document.getElementById('btnAddExpense');
+  var clrBtn = document.getElementById('btnClearExpenses');
+  if (!addBtn || !clrBtn) return; // DOM not ready yet
+  addBtn.addEventListener('click', addExpense);
+  clrBtn.addEventListener('click', clearExpenses);
+
+  var overlay = document.getElementById('calcModal');
+  var sheet   = document.getElementById('calcSheet');
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeCalc();
+    });
+  }
+  if (sheet) {
+    sheet.addEventListener('click', function(e) { e.stopPropagation(); });
+  }
+  _calcReady = true;
+  renderExpenses(); // initial render after DOM ready
+}
+
+function openCalc() {
+  initCalculator();
+  document.getElementById('calcModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  renderExpenses();
+  // Scroll to top of sheet
+  document.getElementById('calcSheet').scrollTop = 0;
+}
+
+function closeCalc() {
+  document.getElementById('calcModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function getExpenses() {
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch(e) {
+    return [];
+  }
+}
+
+function saveExpenses(data) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    return true;
+  } catch(e) {
+    alert('⚠️ 存储失败！可能浏览器限制了本地存储。\n\n请尝试：用 Safari 打开此文件（不要用微信内置浏览器）。');
+    return false;
+  }
+}
+
+function addExpense() {
+  var day    = document.getElementById('expDay').value;
+  var person = document.getElementById('expPerson').value;
+  var cat    = document.getElementById('expCat').value;
+  var desc   = document.getElementById('expDesc').value.trim() || cat.replace(/^[^\s]+\s/,'');
+  var krw    = parseInt(document.getElementById('expKRW').value) || 0;
+  var cny    = parseFloat(document.getElementById('expCNY').value) || 0;
+
+  if (krw === 0 && cny === 0) {
+    alert('请至少输入韩元或人民币金额');
+    return;
+  }
+
+  // Auto-convert
+  if (cny === 0 && krw > 0) { cny = parseFloat((krw / RATE).toFixed(2)); }
+  if (krw === 0 && cny > 0) { krw = Math.round(cny * RATE); }
+
+  var expenses = getExpenses();
+  expenses.push({
+    day: day, person: person, cat: cat, desc: desc,
+    krw: krw, cny: cny,
+    time: new Date().toLocaleTimeString('zh-CN', {hour:'2-digit',minute:'2-digit'})
+  });
+
+  if (!saveExpenses(expenses)) return;
+
+  // Clear inputs
+  document.getElementById('expDesc').value = '';
+  document.getElementById('expKRW').value = '';
+  document.getElementById('expCNY').value = '';
+  document.getElementById('expDesc').focus();
+
+  renderExpenses();
+}
+
+function deleteExpense(index) {
+  if (!confirm('删除这条记录？')) return;
+  var expenses = getExpenses();
+  expenses.splice(index, 1);
+  saveExpenses(expenses);
+  renderExpenses();
+}
+
+function clearExpenses() {
+  if (!confirm('确定要清空所有花费记录吗？此操作不可撤销。')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  renderExpenses();
+}
+
+function renderExpenses() {
+  var expenses = getExpenses();
+  var list  = document.getElementById('expenseList');
+  var total = document.getElementById('expenseTotal');
+  if (!list || !total) return;
+
+  if (expenses.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:#bbb;padding:40px 0;">📝 还没有记录<br><small>添加后数据保存在手机本地 · 关闭页面不会丢失</small></div>';
+    total.innerHTML = '';
+    return;
+  }
+
+  // Group by day
+  var dayOrder = ['6/24','6/25','6/26','6/27'];
+  var grouped = {};
+  expenses.forEach(function(e, i) {
+    e._idx = i;
+    if (!grouped[e.day]) grouped[e.day] = [];
+    grouped[e.day].push(e);
+  });
+
+  var html = '';
+  var totalKRW = 0, totalCNY = 0;
+  var personTotals = {};
+
+  dayOrder.forEach(function(day) {
+    if (!grouped[day]) return;
+    html += '<div style="font-weight:700;color:var(--jeju-sea);margin:12px 0 4px;font-size:13px;">📅 ' + day + ' — ' + grouped[day].length + ' 笔</div>';
+    grouped[day].forEach(function(e) {
+      var displayCNY = e.cny || (e.krw / RATE);
+      totalKRW += e.krw;
+      totalCNY += displayCNY;
+      if (!personTotals[e.person]) personTotals[e.person] = 0;
+      personTotals[e.person] += displayCNY;
+
+      html += '<div class="expense-item">';
+      html += '<div style="flex:1;min-width:0;">';
+      html += '<b>' + e.person + '</b> · ' + e.cat + ' · ' + e.desc;
+      html += '<br><span style="font-size:10px;color:#999;">' + e.day + ' ' + e.time + '</span>';
+      html += '</div>';
+      html += '<div style="text-align:right;flex-shrink:0;margin:0 8px;">';
+      if (e.krw) html += '<span style="font-size:11px;">₩' + e.krw.toLocaleString() + '</span><br>';
+      html += '<span style="color:var(--jeju-sunset);font-weight:600;">¥' + displayCNY.toFixed(2) + '</span>';
+      html += '</div>';
+      html += '<button class="del-btn" data-idx="' + e._idx + '" style="flex-shrink:0;">×</button>';
+      html += '</div>';
+    });
+  });
+
+  list.innerHTML = html;
+
+  // Attach delete handlers
+  list.querySelectorAll('.del-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      deleteExpense(parseInt(this.getAttribute('data-idx')));
+    });
+  });
+
+  // Total
+  var totalHTML = '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;">';
+  totalHTML += '<span>💰 <b>总计</b></span>';
+  totalHTML += '<span>';
+  if (totalKRW) totalHTML += '₩' + totalKRW.toLocaleString() + '  ';
+  totalHTML += '<span style="color:var(--jeju-sunset);font-size:18px;">¥' + totalCNY.toFixed(2) + '</span>';
+  totalHTML += '</span></div>';
+
+  // Per person
+  totalHTML += '<div style="margin-top:6px;font-size:12px;color:#666;">';
+  ['我','朋友A','朋友B','朋友C'].forEach(function(p) {
+    if (personTotals[p]) {
+      totalHTML += p + '：<b>¥' + personTotals[p].toFixed(2) + '</b>  ';
+    }
+  });
+  if (totalCNY > 0) {
+    totalHTML += '<br>👥 人均分摊：<b>¥' + (totalCNY / 4).toFixed(2) + '</b>';
+  }
+  totalHTML += '</div>';
+
+  // Multi-user note
+  totalHTML += '<div style="margin-top:8px;padding:8px 12px;background:#fffbf0;border-radius:8px;font-size:11px;color:#996600;">';
+  totalHTML += '💡 <b>关于多人使用：</b>数据保存在<b>当前手机当前浏览器</b>中，每台手机独立存储。<br>';
+  totalHTML += '朋友用自己手机打开 → 各自记账 → <b>互不共享</b>。<br>';
+  totalHTML += '如果想一起用，建议一个人统一记账，或把每人的金额截图发群里汇总。</div>';
+
+  total.innerHTML = totalHTML;
+
+  // Sync to budget table
+  updateBudget();
+}
+
+// ── Budget Sync ──
+function updateBudget() {
+  var expenses = getExpenses();
+  var catMap = {
+    '✈️ 机票':   'flight',
+    '🛏️ 酒店':   'hotel',
+    '🍽️ 餐饮':   'food',
+    '☕ 咖啡零食': 'food',
+    '🚗 交通':   'trans',
+    '🎫 门票':   'ticket',
+    '📱 通讯':   'wifi'
+  };
+  var totals = { flight:0, hotel:0, food:0, trans:0, ticket:0, wifi:0 };
+  var personCount = 0;
+  var seenPersons = {};
+
+  expenses.forEach(function(e) {
+    var key = catMap[e.cat];
+    if (!key) return; // skip 购物/其他
+    var cny = e.cny || (e.krw / RATE);
+    totals[key] += cny;
+    if (!seenPersons[e.person]) { seenPersons[e.person]=true; personCount++; }
+  });
+
+  var ppl = personCount || 4; // default 4 people
+  var totalAll = 0;
+
+  var ids = { flight:'budgetFlight', hotel:'budgetHotel', food:'budgetFood', trans:'budgetTrans', ticket:'budgetTicket', wifi:'budgetWifi' };
+  Object.keys(ids).forEach(function(k) {
+    var el = document.getElementById(ids[k]);
+    if (el) {
+      if (totals[k] > 0) {
+        var per = totals[k] / ppl;
+        el.innerHTML = '<span style="color:var(--jeju-sunset);font-weight:600;">¥' + per.toFixed(2) + '</span> <span style="font-size:10px;color:#999;">/人</span>';
+        totalAll += per;
+      } else {
+        el.textContent = '—';
+      }
+    }
+  });
+
+  var totalEl = document.getElementById('budgetTotal');
+  var subEl   = document.getElementById('budgetSub');
+  if (totalEl) {
+    if (totalAll > 0) {
+      totalEl.innerHTML = '<span style="font-size:18px;">¥' + totalAll.toFixed(2) + '</span> <span style="font-size:10px;">/人</span>';
+      if (subEl) subEl.textContent = '已从计算器同步 · 共 ' + expenses.length + ' 笔记录 · ' + ppl + ' 人均摊';
+    } else {
+      totalEl.textContent = '—';
+      if (subEl && expenses.length === 0) subEl.textContent = '在「每日花费计算器」中记账 → 数字自动同步到这里';
+    }
+  }
+}
+
+// Run on load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCalculator);
+} else {
+  initCalculator();
+}
+</script>
+
+</body>
+</html>
