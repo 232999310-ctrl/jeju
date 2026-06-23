@@ -3,193 +3,518 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📍 济州岛攻略 · 高德地图坐标清单</title>
+<title>📍 济州岛攻略 · 全平台坐标（高德 + Naver Map）</title>
 <style>
-body { font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width:900px; margin:0 auto; padding:20px; color:#2c3e50; line-height:1.8; background:#f8f9fa; }
-h1 { background:linear-gradient(135deg,#1a6b8a,#e8734a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-size:26px; }
-h2 { color:#1a6b8a; border-left:4px solid #1a6b8a; padding-left:12px; margin-top:32px; }
-table { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px; background:white; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
-th { background:#1a6b8a; color:white; padding:10px 12px; text-align:left; font-size:13px; }
-td { padding:8px 12px; border-bottom:1px solid #eee; }
+body { font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width:960px; margin:0 auto; padding:16px; color:#2c3e50; line-height:1.8; background:#f5f7f8; }
+h1 { background:linear-gradient(135deg,#03c75a,#1a6b8a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-size:24px; }
+h2 { color:#1a6b8a; border-left:4px solid #1a6b8a; padding-left:12px; margin:28px 0 12px; font-size:18px; }
+.platform { display:flex; gap:12px; margin:14px 0; flex-wrap:wrap; }
+.gd-card,.nv-card { flex:1; min-width:260px; border-radius:12px; padding:16px; }
+.gd-card { background:#fff; border:2px solid #e8734a; }
+.nv-card { background:#fff; border:2px solid #03c75a; }
+.gd-card h3 { color:#e8734a; margin:0 0 8px; font-size:15px; }
+.nv-card h3 { color:#03c75a; margin:0 0 8px; font-size:15px; }
+.gd-card code,.nv-card code { font-size:13px; display:block; margin:6px 0; }
+table { width:100%; border-collapse:collapse; margin:8px 0 20px; font-size:13px; background:white; border-radius:6px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.04); }
+th { background:#1a6b8a; color:white; padding:8px 10px; text-align:left; font-size:12px; }
+td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
 tr:last-child td { border-bottom:none; }
-.coord { font-family:monospace; background:#f0f0f0; padding:2px 8px; border-radius:4px; font-size:12px; white-space:nowrap; }
-.tag { display:inline-block; padding:2px 8px; border-radius:12px; font-size:11px; margin:0 2px; }
-.tag-hotel { background:#e8f4f8; color:#1a6b8a; }
-.tag-shop { background:#fff3cd; color:#856404; }
-.tag-food { background:#ffe8e8; color:#c0392b; }
-.tag-spot { background:#e8f5e9; color:#2e7d32; }
-.tag-wc { background:#f3e5f5; color:#7b1fa2; }
-.tag-trans { background:#e3f2fd; color:#1565c0; }
-.emoji { font-size:18px; }
-.step { background:white; border:2px solid #1a6b8a; border-radius:12px; padding:20px; margin:16px 0; }
-.step ol { padding-left:20px; }
-.step li { margin:8px 0; }
-.warn { background:#fff8e1; border-left:4px solid #f5a623; padding:12px 16px; margin:12px 0; border-radius:0 6px 6px 0; }
+.coord { font-family:'SF Mono',Consolas,monospace; font-size:11px; background:#e8f4f8; padding:2px 6px; border-radius:4px; white-space:nowrap; }
+.gd-s { color:#e8734a; font-weight:600; }
+.nv-s { color:#03c75a; font-weight:600; }
+.tag { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10px; }
+.t-hotel{background:#e8f4f8;color:#1a6b8a} .t-shop{background:#fff3cd;color:#856404}
+.t-food{background:#ffe8e8;color:#c0392b} .t-spot{background:#e8f5e9;color:#2e7d32}
+.t-trans{background:#e3f2fd;color:#1565c0} .t-wc{background:#f3e5f5;color:#7b1fa2}
+.step { background:white; border-radius:12px; padding:18px; margin:14px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); }
+.step ol { padding-left:20px; margin:8px 0 0; }
+.step li { margin:6px 0; font-size:14px; }
+.warn { background:#fff8e1; border-left:4px solid #f5a623; padding:10px 14px; margin:10px 0; border-radius:0 6px 6px 0; font-size:13px; }
 </style>
 </head>
 <body>
 
-<h1>📍 济州岛攻略 · 高德地图坐标清单</h1>
-<p><strong>Updated: 2026.06.23</strong> | <a href="https://232999310-ctrl.github.io/jeju/">← 返回攻略主页</a></p>
+<h1>📍 济州岛攻略 · 全平台坐标</h1>
+<p style="color:#666;margin:4px 0;">WGS-84坐标系 | <span class="gd-s">高德App</span> 搜坐标 or <span class="nv-s">Naver Map</span> 搜韩文 | <a href="https://232999310-ctrl.github.io/jeju/">← 返回攻略</a></p>
 
-<div class="warn" style="border-left-color:#ff4444;background:#fff0f0;">
-<strong>⚠️ 高德网页版不支持海外坐标搜索！</strong><br>
-高德地图网页版（amap.com）的搜索框无法搜索韩国坐标。需要用以下任一替代方案：
-</div>
-
-<div class="step">
-<h3>🥇 方案一：高德手机App（推荐·最方便）</h3>
-<ol>
-<li>手机上打开<b>高德地图App</b>（非网页版！）</li>
-<li>在顶部搜索框<b>直接粘贴坐标</b>（如 <code>33.4868,126.4810</code>）</li>
-<li>点击搜索 → App会定位到济州岛该位置</li>
-<li>点下方卡片 → <b>⭐ 收藏</b> → 选「济州岛攻略」收藏夹</li>
-<li>逐个添加所有坐标（约50个·10分钟搞定）</li>
-</ol>
-<p style="color:#e8734a;font-weight:bold;">💡 手机App和网页版收藏自动同步！在手机上添加后，网页版也能看到。</p>
-</div>
-
-<div class="step">
-<h3>🥈 方案二：Google My Maps（地图最准·可分享）</h3>
-<ol>
-<li>打开 <b>google.com/maps</b> → 左侧菜单 →「我的地图」→「创建地图」</li>
-<li>搜索框粘贴坐标 → 添加标记 → 重命名</li>
-<li>全部添加后 → 点「分享」→ 获取链接</li>
-<li>把链接发给朋友 → 大家都能在手机Google Maps里打开</li>
-<li>📱 手机上可离线下载济州岛区域地图（没网也能导航！）</li>
-</ol>
-<p style="color:#1a6b8a;">✅ 韩国地图最精准 · ✅ 支持离线 · ✅ 一人做好全团共享</p>
-</div>
-
-<div class="step">
-<h3>🥉 方案三：Naver Map（韩国本地最强）</h3>
-<ol>
-<li>下载 <b>Naver Map</b> App（韩国版"高德"）</li>
-<li>支持中文界面 → 搜索框粘贴坐标或韩文地址</li>
-<li>公交路线、步行导航最准确</li>
-<li>账号收藏可跨设备同步</li>
+<!-- ============ 双平台教程 ============ -->
+<div class="platform">
+<div class="gd-card">
+<h3>🗺️ 高德地图 App</h3>
+<ol style="font-size:13px;padding-left:18px;margin:6px 0;">
+<li>手机打开<b>高德App</b></li>
+<li>搜索框粘贴坐标<br><code>33.4868,126.4810</code></li>
+<li>点 ⭐<b>收藏</b> 到「济州攻略」</li>
+<li>逐个添加下方坐标</li>
 </ol>
 </div>
+<div class="nv-card">
+<h3>🗺️ Naver Map（韩国必备）</h3>
+<ol style="font-size:13px;padding-left:18px;margin:6px 0;">
+<li>打开<b>Naver Map App</b></li>
+<li>搜<b>韩文名</b>最准<br><code>제주국제공항</code></li>
+<li>或搜坐标粘贴也行<br><code>33.5067,126.4930</code></li>
+<li>点 ⭐<b>즐겨찾기</b> 收藏</li>
+</ol>
+</div>
+</div>
 
-<div class="warn">以下坐标使用 <b>WGS-84 坐标系</b>，适用于：Google Maps、Naver Map、高德手机App、苹果地图。</div>
+<div class="warn">
+📱 <b>建议</b>：<span class="nv-s">Naver Map</span> 做主导航（公交/步行最准） + <span class="gd-s">高德App</span> 做收藏备份（同步网页版朋友可看）
+</div>
 
-<!-- ============ DAY 1 ============ -->
-<h2>🏨 Day1 据点：住宿 + 周边</h2>
+<!-- ============ 酒店周边 ============ -->
+<h2>🏨 酒店 + 周边</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🏨</span> 新罗舒泰酒店（保健路）</td><td><span class="coord">33.4868,126.4810</span></td><td><span class="tag tag-hotel">住宿</span></td></tr>
-<tr><td><span class="emoji">🏪</span> GS25便利店（酒店楼下）</td><td><span class="coord">33.4868,126.4810</span></td><td><span class="tag tag-food">便利店</span></td></tr>
-<tr><td><span class="emoji">🏪</span> CU便利店（酒店左侧）</td><td><span class="coord">33.4869,126.4808</span></td><td><span class="tag tag-food">便利店</span></td></tr>
-<tr><td><span class="emoji">☕</span> 星巴克 保健路店</td><td><span class="coord">33.4870,126.4815</span></td><td><span class="tag tag-food">咖啡</span></td></tr>
-<tr><td><span class="emoji">🚌</span> 汉拿医院公交站（出行枢纽）</td><td><span class="coord">33.4855,126.4830</span></td><td><span class="tag tag-trans">交通</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td>新罗舒泰酒店</td>
+  <td><span class="coord">33.4868,126.4810</span></td>
+  <td><span class="gd-s">新罗舒泰酒店</span></td>
+  <td><span class="nv-s">신라스테이 제주</span></td>
+  <td><span class="tag t-hotel">住宿</span></td>
+</tr>
+<tr>
+  <td>GS25 便利店（楼下）</td>
+  <td><span class="coord">33.4868,126.4810</span></td>
+  <td><span class="gd-s">GS25莲洞店</span></td>
+  <td><span class="nv-s">GS25 연동점</span></td>
+  <td><span class="tag t-food">便利店</span></td>
+</tr>
+<tr>
+  <td>CU 便利店（左侧）</td>
+  <td><span class="coord">33.4869,126.4808</span></td>
+  <td><span class="gd-s">CU莲洞店</span></td>
+  <td><span class="nv-s">CU 연동점</span></td>
+  <td><span class="tag t-food">便利店</span></td>
+</tr>
+<tr>
+  <td>星巴克 保健路</td>
+  <td><span class="coord">33.4870,126.4815</span></td>
+  <td><span class="gd-s">星巴克济州莲洞</span></td>
+  <td><span class="nv-s">스타벅스 연동</span></td>
+  <td><span class="tag t-food">咖啡</span></td>
+</tr>
+<tr>
+  <td>汉拿医院公交站</td>
+  <td><span class="coord">33.4855,126.4830</span></td>
+  <td><span class="gd-s">汉拿医院</span></td>
+  <td><span class="nv-s">한라병원</span></td>
+  <td><span class="tag t-trans">交通枢纽</span></td>
+</tr>
+<tr>
+  <td>莲洞居民中心公厕</td>
+  <td><span class="coord">33.4875,126.4822</span></td>
+  <td><span class="gd-s">莲洞居民中心</span></td>
+  <td><span class="nv-s">연동주민센터</span></td>
+  <td><span class="tag t-wc">24h厕所</span></td>
+</tr>
 </table>
 
-<!-- ============ SHOPPING ============ -->
-<h2>🛍️ 购物核心坐标</h2>
+<!-- ============ 购物 ============ -->
+<h2>🛍️ 购物</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">👜</span> <b>乐天免税店 · LV专柜</b></td><td><span class="coord">33.4882,126.4825</span></td><td><span class="tag tag-shop">LV购物</span></td></tr>
-<tr><td><span class="emoji">🏬</span> 新罗免税店（金卡1F办理）</td><td><span class="coord">33.4873,126.4840</span></td><td><span class="tag tag-shop">免税+OY返点</span></td></tr>
-<tr><td><span class="emoji">💄</span> Olive Young 莲洞店</td><td><span class="coord">33.4870,126.4820</span></td><td><span class="tag tag-shop">美妆</span></td></tr>
-<tr><td><span class="emoji">🛍️</span> 保健路步行街</td><td><span class="coord">33.4870,126.4815</span></td><td><span class="tag tag-shop">逛街</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td><b>乐天免税店 · LV</b></td>
+  <td><span class="coord">33.4882,126.4825</span></td>
+  <td><span class="gd-s">乐天免税店济州</span></td>
+  <td><span class="nv-s">롯데면세점 제주</span></td>
+  <td><span class="tag t-shop">LV·奢侈品</span></td>
+</tr>
+<tr>
+  <td>新罗免税店</td>
+  <td><span class="coord">33.4873,126.4840</span></td>
+  <td><span class="gd-s">新罗免税店济州</span></td>
+  <td><span class="nv-s">신라면세점 제주</span></td>
+  <td><span class="tag t-shop">金卡1F·OY返点</span></td>
+</tr>
+<tr>
+  <td>Olive Young 莲洞店</td>
+  <td><span class="coord">33.4870,126.4820</span></td>
+  <td><span class="gd-s">Olive Young莲洞</span></td>
+  <td><span class="nv-s">올리브영 연동점</span></td>
+  <td><span class="tag t-shop">美妆</span></td>
+</tr>
+<tr>
+  <td>保健路步行街</td>
+  <td><span class="coord">33.4870,126.4815</span></td>
+  <td><span class="gd-s">济州保健路</span></td>
+  <td><span class="nv-s">보건로</span></td>
+  <td><span class="tag t-shop">逛街</span></td>
+</tr>
+<tr>
+  <td>The Islander（橘子香水）</td>
+  <td><span class="coord">33.5118,126.5250</span></td>
+  <td><span class="gd-s">The Islander济州</span></td>
+  <td><span class="nv-s">디아일랜더 제주</span></td>
+  <td><span class="tag t-shop">文创杂货</span></td>
+</tr>
+<tr>
+  <td>slo-mo 杂货店</td>
+  <td><span class="coord">33.5135,126.5265</span></td>
+  <td><span class="gd-s">slo-mo济州</span></td>
+  <td><span class="nv-s">슬로모</span></td>
+  <td><span class="tag t-shop">设计杂货</span></td>
+</tr>
 </table>
 
-<!-- ============ DAY 1 CITY ============ -->
-<h2>🏙️ Day1 市区探索坐标</h2>
+<!-- ============ Day1 市区 ============ -->
+<h2>🏙️ Day1 · 市区</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🛍️</span> 七星街（칠성로）</td><td><span class="coord">33.5120,126.5255</span></td><td><span class="tag tag-spot">逛街</span></td></tr>
-<tr><td><span class="emoji">🛍️</span> The Islander（七星街·橘子香水）</td><td><span class="coord">33.5118,126.5250</span></td><td><span class="tag tag-shop">文创杂货</span></td></tr>
-<tr><td><span class="emoji">🛍️</span> slo-mo（东门市场对面2F）</td><td><span class="coord">33.5135,126.5265</span></td><td><span class="tag tag-shop">设计杂货</span></td></tr>
-<tr><td><span class="emoji">🐟</span> 东门市场</td><td><span class="coord">33.5135,126.5270</span></td><td><span class="tag tag-food">市场+夜市</span></td></tr>
-<tr><td><span class="emoji">🍊</span> <b>DOTOREE Kitchen 橡子厨房（橘子冷面）</b></td><td><span class="coord">33.5138,126.5263</span></td><td><span class="tag tag-food">⭐必吃</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td>七星街</td>
+  <td><span class="coord">33.5120,126.5255</span></td>
+  <td><span class="gd-s">济州七星路</span></td>
+  <td><span class="nv-s">칠성로</span></td>
+  <td><span class="tag t-spot">逛街</span></td>
+</tr>
+<tr>
+  <td>东门市场</td>
+  <td><span class="coord">33.5135,126.5270</span></td>
+  <td><span class="gd-s">济州东门市场</span></td>
+  <td><span class="nv-s">동문시장</span></td>
+  <td><span class="tag t-food">市场</span></td>
+</tr>
+<tr>
+  <td>牧官衙</td>
+  <td><span class="coord">33.5140,126.5245</span></td>
+  <td><span class="gd-s">济州牧官衙</span></td>
+  <td><span class="nv-s">제주목관아</span></td>
+  <td><span class="tag t-spot">古迹</span></td>
+</tr>
 </table>
 
-<!-- ============ DAY 2 WEST LINE ============ -->
-<h2>🌊 Day2 西线坐标（202路公交）</h2>
+<!-- ============ Day2 西线 ============ -->
+<h2>🌊 Day2 · 西线（202路公交）</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🚌</span> 한림공원(서) 站（狭才海滩下车）</td><td><span class="coord">33.3985,126.2540</span></td><td><span class="tag tag-trans">202路下车</span></td></tr>
-<tr><td><span class="emoji">🏖️</span> 狭才海水浴场</td><td><span class="coord">33.3985,126.2560</span></td><td><span class="tag tag-spot">海滩</span></td></tr>
-<tr><td><span class="emoji">🚌</span> 한담동(서) 站（涯月邑下车）</td><td><span class="coord">33.4614,126.3145</span></td><td><span class="tag tag-trans">202路下车</span></td></tr>
-<tr><td><span class="emoji">☕</span> Honeymoon House（悬崖古堡咖啡）</td><td><span class="coord">33.4610,126.3150</span></td><td><span class="tag tag-food">咖啡</span></td></tr>
-<tr><td><span class="emoji">☕</span> Slow Boat 咖啡馆</td><td><span class="coord">33.4608,126.3140</span></td><td><span class="tag tag-food">咖啡</span></td></tr>
-<tr><td><span class="emoji">🛍️</span> PRIKA 美妆集合店（涯月）</td><td><span class="coord">33.4618,126.3155</span></td><td><span class="tag tag-shop">美妆</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td>狭才海水浴场</td>
+  <td><span class="coord">33.3985,126.2560</span></td>
+  <td><span class="gd-s">狭才海水浴场</span></td>
+  <td><span class="nv-s">협재해수욕장</span></td>
+  <td><span class="tag t-spot">海滩</span></td>
+</tr>
+<tr>
+  <td>狭才下车：翰林公园站</td>
+  <td><span class="coord">33.3985,126.2540</span></td>
+  <td><span class="gd-s">翰林公园</span></td>
+  <td><span class="nv-s">한림공원</span></td>
+  <td><span class="tag t-trans">202路下车</span></td>
+</tr>
+<tr>
+  <td>涯月邑 汉潭洞站</td>
+  <td><span class="coord">33.4614,126.3145</span></td>
+  <td><span class="gd-s">涯月汉潭</span></td>
+  <td><span class="nv-s">한담동</span></td>
+  <td><span class="tag t-trans">202路下车</span></td>
+</tr>
+<tr>
+  <td>Honeymoon House</td>
+  <td><span class="coord">33.4610,126.3150</span></td>
+  <td><span class="gd-s">Honeymoon House涯月</span></td>
+  <td><span class="nv-s">허니문하우스</span></td>
+  <td><span class="tag t-food">悬崖咖啡</span></td>
+</tr>
+<tr>
+  <td>Slow Boat 咖啡</td>
+  <td><span class="coord">33.4608,126.3140</span></td>
+  <td><span class="gd-s">Slow Boat涯月</span></td>
+  <td><span class="nv-s">슬로우보트</span></td>
+  <td><span class="tag t-food">建筑咖啡</span></td>
+</tr>
+<tr>
+  <td>PRIKA 美妆集合</td>
+  <td><span class="coord">33.4618,126.3155</span></td>
+  <td><span class="gd-s">PRIKA涯月</span></td>
+  <td><span class="nv-s">프리카</span></td>
+  <td><span class="tag t-shop">美妆</span></td>
+</tr>
+<tr>
+  <td>DOTOREE 橘子冷面</td>
+  <td><span class="coord">33.5138,126.5263</span></td>
+  <td><span class="gd-s">DOTOREE Kitchen</span></td>
+  <td><span class="nv-s">도토리키친</span></td>
+  <td><span class="tag t-food">⭐必吃</span></td>
+</tr>
 </table>
 
-<!-- ============ DAY 3 EAST LINE DAY TOUR ============ -->
-<h2>🐮 Day3 东线一日团坐标（跟团）</h2>
+<!-- ============ Day3 牛岛 ============ -->
+<h2>🐮 Day3 · 牛岛交通线</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🌄</span> 城山日出峰</td><td><span class="coord">33.4581,126.9413</span></td><td><span class="tag tag-spot">景点</span></td></tr>
-<tr><td><span class="emoji">🚌</span> 城山港浦站（111路终点·去牛岛）</td><td><span class="coord">33.4750,126.9320</span></td><td><span class="tag tag-trans">交通</span></td></tr>
-<tr><td><span class="emoji">🛥️</span> 牛岛 天津港</td><td><span class="coord">33.5000,126.9550</span></td><td><span class="tag tag-spot">牛岛入口</span></td></tr>
-<tr><td><span class="emoji">🏖️</span> 牛岛 西滨白沙滩</td><td><span class="coord">33.5020,126.9520</span></td><td><span class="tag tag-spot">⭐最美海滩</span></td></tr>
-<tr><td><span class="emoji">☕</span> Blanc Rocher 咖啡（牛岛）</td><td><span class="coord">33.5010,126.9530</span></td><td><span class="tag tag-food">果冻海咖啡</span></td></tr>
-<tr><td><span class="emoji">🏖️</span> 月汀里海水浴场</td><td><span class="coord">33.5554,126.7984</span></td><td><span class="tag tag-spot">海滩</span></td></tr>
-<tr><td><span class="emoji">☕</span> Mou Moon 咖啡（月汀里）</td><td><span class="coord">33.5556,126.7980</span></td><td><span class="tag tag-food">海景咖啡</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td>济州机场 1号门（111路上车）</td>
+  <td><span class="coord">33.5067,126.4930</span></td>
+  <td><span class="gd-s">济州国际机场1号门</span></td>
+  <td><span class="nv-s">제주공항 1번출구</span></td>
+  <td><span class="tag t-trans">公交上车</span></td>
+</tr>
+<tr>
+  <td>机场到达厅厕所（1F·1号门内）</td>
+  <td><span class="coord">33.5067,126.4930</span></td>
+  <td><span class="gd-s">济州机场到达厅</span></td>
+  <td><span class="nv-s">제주공항 1층 화장실</span></td>
+  <td><span class="tag t-wc">厕所</span></td>
+</tr>
+<tr>
+  <td>城山港浦站（111路终点·往返同站）</td>
+  <td><span class="coord">33.4750,126.9320</span></td>
+  <td><span class="gd-s">城山港</span></td>
+  <td><span class="nv-s">성산포항</span></td>
+  <td><span class="tag t-trans">公交终点</span></td>
+</tr>
+<tr>
+  <td>城山港码头售票厅厕所</td>
+  <td><span class="coord">33.4750,126.9320</span></td>
+  <td><span class="gd-s">城山港客运站</span></td>
+  <td><span class="nv-s">성산항 화장실</span></td>
+  <td><span class="tag t-wc">厕所</span></td>
+</tr>
+<tr>
+  <td>牛岛 天津港</td>
+  <td><span class="coord">33.5000,126.9550</span></td>
+  <td><span class="gd-s">牛岛天津港</span></td>
+  <td><span class="nv-s">우도 천진항</span></td>
+  <td><span class="tag t-spot">牛岛入口</span></td>
+</tr>
+<tr>
+  <td>牛岛 西滨白沙滩</td>
+  <td><span class="coord">33.5020,126.9520</span></td>
+  <td><span class="gd-s">牛岛西滨白沙滩</span></td>
+  <td><span class="nv-s">우도 서빈백사</span></td>
+  <td><span class="tag t-spot">⭐果冻海</span></td>
+</tr>
+<tr>
+  <td>牛岛 黑沙滩</td>
+  <td><span class="coord">33.5080,126.9580</span></td>
+  <td><span class="gd-s">牛岛黑沙滩</span></td>
+  <td><span class="nv-s">우도 검멀레해변</span></td>
+  <td><span class="tag t-spot">火山沙</span></td>
+</tr>
+<tr>
+  <td>牛岛 灯塔</td>
+  <td><span class="coord">33.5050,126.9600</span></td>
+  <td><span class="gd-s">牛岛灯塔</span></td>
+  <td><span class="nv-s">우도등대</span></td>
+  <td><span class="tag t-spot">景点</span></td>
+</tr>
+<tr>
+  <td>Blanc Rocher 咖啡（牛岛）</td>
+  <td><span class="coord">33.5010,126.9530</span></td>
+  <td><span class="gd-s">Blanc Rocher牛岛</span></td>
+  <td><span class="nv-s">블랑로쉐 우도</span></td>
+  <td><span class="tag t-food">果冻海咖啡</span></td>
+</tr>
+<tr>
+  <td>海女之家（牛岛）</td>
+  <td><span class="coord">33.5060,126.9580</span></td>
+  <td><span class="gd-s">海女之家牛岛</span></td>
+  <td><span class="nv-s">해녀의집 우도</span></td>
+  <td><span class="tag t-food">海鲜面</span></td>
+</tr>
+<tr>
+  <td>城山日出峰</td>
+  <td><span class="coord">33.4581,126.9413</span></td>
+  <td><span class="gd-s">城山日出峰</span></td>
+  <td><span class="nv-s">성산일출봉</span></td>
+  <td><span class="tag t-spot">景点</span></td>
+</tr>
+<tr>
+  <td>涉地可支</td>
+  <td><span class="coord">33.4280,126.9310</span></td>
+  <td><span class="gd-s">涉地可支</span></td>
+  <td><span class="nv-s">섭지코지</span></td>
+  <td><span class="tag t-spot">免费景点</span></td>
+</tr>
+<tr>
+  <td>月汀里海水浴场</td>
+  <td><span class="coord">33.5554,126.7984</span></td>
+  <td><span class="gd-s">月汀里海水浴场</span></td>
+  <td><span class="nv-s">월정리해수욕장</span></td>
+  <td><span class="tag t-spot">海滩</span></td>
+</tr>
 </table>
 
-<!-- ============ DAY 4 ============ -->
-<h2>🎯 Day4 五日民俗市场 + 返程</h2>
+<!-- ============ Day4 ============ -->
+<h2>🎯 Day4 · 五日市场 + 机场</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🎯</span> <b>五日民俗市场</b>（仅2/7/12/17/22/27开！）</td><td><span class="coord">33.4980,126.5290</span></td><td><span class="tag tag-food">⭐必去集市</span></td></tr>
-<tr><td><span class="emoji">✈️</span> 济州国际机场</td><td><span class="coord">33.5067,126.4930</span></td><td><span class="tag tag-trans">机场</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td><b>五日民俗市场</b></td>
+  <td><span class="coord">33.4980,126.5290</span></td>
+  <td><span class="gd-s">济州五日民俗市场</span></td>
+  <td><span class="nv-s">제주오일시장</span></td>
+  <td><span class="tag t-food">⭐仅27号开</span></td>
+</tr>
+<tr>
+  <td>济州机场 出发厅3F</td>
+  <td><span class="coord">33.5067,126.4930</span></td>
+  <td><span class="gd-s">济州国际机场出发厅</span></td>
+  <td><span class="nv-s">제주공항 3층</span></td>
+  <td><span class="tag t-trans">机场</span></td>
+</tr>
+<tr>
+  <td>机场退税KIOSK（3号门）</td>
+  <td><span class="coord">33.5067,126.4930</span></td>
+  <td><span class="gd-s">退税机3号门</span></td>
+  <td><span class="nv-s">제주공항 3번게이트</span></td>
+  <td><span class="tag t-shop">退税</span></td>
+</tr>
 </table>
 
-<!-- ============ ALL FOOD ============ -->
-<h2>🍽️ 美食全坐标</h2>
+<!-- ============ 美食全集 ============ -->
+<h2>🍽️ 美食全集</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">🥩</span> 肉季节 육계절（本地人秘密·黑猪肉）</td><td><span class="coord">33.4890,126.4750</span></td><td><span class="tag tag-food">⭐黑猪肉</span></td></tr>
-<tr><td><span class="emoji">🥩</span> 熟成到 숙성도（涯月·熟成猪肉）</td><td><span class="coord">33.4620,126.3540</span></td><td><span class="tag tag-food">⭐黑猪肉</span></td></tr>
-<tr><td><span class="emoji">🥩</span> Tamna Butcher's（性价比黑猪）</td><td><span class="coord">33.4860,126.4850</span></td><td><span class="tag tag-food">黑猪肉</span></td></tr>
-<tr><td><span class="emoji">🥩</span> Kkamdon Heukdwaeji（十年老店）</td><td><span class="coord">33.4885,126.4770</span></td><td><span class="tag tag-food">黑猪肉</span></td></tr>
-<tr><td><span class="emoji">🥩</span> giwoonne 기운네 흑돼지（七星街附近）</td><td><span class="coord">33.5125,126.5260</span></td><td><span class="tag tag-food">黑猪肉</span></td></tr>
-<tr><td><span class="emoji">🥩</span> Dombe豚 돔베돈（传统白切肉）</td><td><span class="coord">33.5130,126.5275</span></td><td><span class="tag tag-food">传统黑猪</span></td></tr>
-<tr><td><span class="emoji">🐷</span> Baro猪蹄 바로족발</td><td><span class="coord">33.4910,126.4780</span></td><td><span class="tag tag-food">⭐猪蹄</span></td></tr>
-<tr><td><span class="emoji">🐷</span> 金赏猪蹄店（保健路附近）</td><td><span class="coord">33.4865,126.4805</span></td><td><span class="tag tag-food">猪蹄</span></td></tr>
-<tr><td><span class="emoji">🦪</span> 海女之家 해녀의집（城山·海鲜锅）</td><td><span class="coord">33.4700,126.9300</span></td><td><span class="tag tag-food">海鲜</span></td></tr>
-<tr><td><span class="emoji">🦪</span> 善良鲍鱼 착한전복（中文区·鲍鱼锅）</td><td><span class="coord">33.2450,126.4250</span></td><td><span class="tag tag-food">鲍鱼</span></td></tr>
-<tr><td><span class="emoji">🦪</span> 계절식 Gyejeolsig（海边斧饭）</td><td><span class="coord">33.4400,126.9200</span></td><td><span class="tag tag-food">⭐斧饭</span></td></tr>
-<tr><td><span class="emoji">🍗</span> BHC炸鸡（芝士粉炸鸡）</td><td><span class="coord">33.4875,126.4820</span></td><td><span class="tag tag-food">炸鸡</span></td></tr>
-<tr><td><span class="emoji">🍊</span> DOTOREE Kitchen（橘子冷面）</td><td><span class="coord">33.5138,126.5263</span></td><td><span class="tag tag-food">⭐必吃冷面</span></td></tr>
-<tr><td><span class="emoji">☕</span> Cafe Delmoondo（咸德海滩）</td><td><span class="coord">33.5443,126.6721</span></td><td><span class="tag tag-food">海景咖啡</span></td></tr>
-<tr><td><span class="emoji">☕</span> SONAMUCOFFEE 松树咖啡</td><td><span class="coord">33.4900,126.4880</span></td><td><span class="tag tag-food">日系咖啡</span></td></tr>
+<tr><th style="width:28%">名称</th><th style="width:16%">坐标</th><th style="width:20%"><span class="gd-s">高德搜</span></th><th style="width:25%"><span class="nv-s">Naver 搜</span></th><th style="width:11%">标签</th></tr>
+<tr>
+  <td>肉季节（本地人黑猪肉）</td>
+  <td><span class="coord">33.4890,126.4750</span></td>
+  <td><span class="gd-s">肉季节济州</span></td>
+  <td><span class="nv-s">육계절</span></td>
+  <td><span class="tag t-food">⭐黑猪肉</span></td>
+</tr>
+<tr>
+  <td>熟成到（涯月·熟成猪肉）</td>
+  <td><span class="coord">33.4620,126.3540</span></td>
+  <td><span class="gd-s">熟成到涯月</span></td>
+  <td><span class="nv-s">숙성도 애월</span></td>
+  <td><span class="tag t-food">⭐黑猪肉</span></td>
+</tr>
+<tr>
+  <td>Tamna Butcher's（性价比）</td>
+  <td><span class="coord">33.4860,126.4850</span></td>
+  <td><span class="gd-s">Tamna Butcher</span></td>
+  <td><span class="nv-s">탐나정육식당</span></td>
+  <td><span class="tag t-food">黑猪肉</span></td>
+</tr>
+<tr>
+  <td>giwoonne（七星街附近）</td>
+  <td><span class="coord">33.5125,126.5260</span></td>
+  <td><span class="gd-s">giwoonne济州</span></td>
+  <td><span class="nv-s">기운네 흑돼지</span></td>
+  <td><span class="tag t-food">黑猪肉</span></td>
+</tr>
+<tr>
+  <td>Baro猪蹄</td>
+  <td><span class="coord">33.4910,126.4780</span></td>
+  <td><span class="gd-s">Baro猪蹄济州</span></td>
+  <td><span class="nv-s">바로족발</span></td>
+  <td><span class="tag t-food">⭐猪蹄</span></td>
+</tr>
+<tr>
+  <td>金赏猪蹄（保健路附近）</td>
+  <td><span class="coord">33.4865,126.4805</span></td>
+  <td><span class="gd-s">金赏猪蹄济州</span></td>
+  <td><span class="nv-s">금상족발</span></td>
+  <td><span class="tag t-food">猪蹄</span></td>
+</tr>
+<tr>
+  <td>BHC炸鸡</td>
+  <td><span class="coord">33.4875,126.4820</span></td>
+  <td><span class="gd-s">BHC炸鸡莲洞</span></td>
+  <td><span class="nv-s">BHC치킨 연동</span></td>
+  <td><span class="tag t-food">炸鸡</span></td>
+</tr>
+<tr>
+  <td>海女之家（城山·海鲜锅）</td>
+  <td><span class="coord">33.4700,126.9300</span></td>
+  <td><span class="gd-s">海女之家城山</span></td>
+  <td><span class="nv-s">해녀의집 성산</span></td>
+  <td><span class="tag t-food">海鲜锅</span></td>
+</tr>
+<tr>
+  <td>善良鲍鱼（中文区）</td>
+  <td><span class="coord">33.2450,126.4250</span></td>
+  <td><span class="gd-s">善良鲍鱼西归浦</span></td>
+  <td><span class="nv-s">착한전복</span></td>
+  <td><span class="tag t-food">鲍鱼锅</span></td>
+</tr>
+<tr>
+  <td>Gyejeolsig 斧饭</td>
+  <td><span class="coord">33.4400,126.9200</span></td>
+  <td><span class="gd-s">Gyejeolsig济州</span></td>
+  <td><span class="nv-s">계절식</span></td>
+  <td><span class="tag t-food">⭐斧饭</span></td>
+</tr>
+<tr>
+  <td>Cafe Delmoondo（咸德）</td>
+  <td><span class="coord">33.5443,126.6721</span></td>
+  <td><span class="gd-s">Cafe Delmoondo</span></td>
+  <td><span class="nv-s">카페 델문도</span></td>
+  <td><span class="tag t-food">海景咖啡</span></td>
+</tr>
+<tr>
+  <td>Mou Moon（月汀里）</td>
+  <td><span class="coord">33.5556,126.7980</span></td>
+  <td><span class="gd-s">Mou Moon月汀里</span></td>
+  <td><span class="nv-s">무문</span></td>
+  <td><span class="tag t-food">咖啡</span></td>
+</tr>
+<tr>
+  <td>SONAMU 松树咖啡</td>
+  <td><span class="coord">33.4900,126.4880</span></td>
+  <td><span class="gd-s">SONAMU咖啡济州</span></td>
+  <td><span class="nv-s">소나무커피</span></td>
+  <td><span class="tag t-food">日系咖啡</span></td>
+</tr>
 </table>
 
-<!-- ============ EXTRA SPOTS ============ -->
-<h2>📸 其他景点 + 备用坐标</h2>
+<!-- ============ 其他景点 ============ -->
+<h2>📸 备用景点</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>标签</th></tr>
-<tr><td><span class="emoji">⛪</span> 涉地可支（安藤忠雄·免费）</td><td><span class="coord">33.4280,126.9310</span></td><td><span class="tag tag-spot">景点</span></td></tr>
-<tr><td><span class="emoji">🏖️</span> 咸德海水浴场</td><td><span class="coord">33.5443,126.6721</span></td><td><span class="tag tag-spot">海滩</span></td></tr>
-<tr><td><span class="emoji">🪨</span> 柱状节理带</td><td><span class="coord">33.2358,126.4274</span></td><td><span class="tag tag-spot">景点</span></td></tr>
-<tr><td><span class="emoji">💦</span> 天帝渊瀑布</td><td><span class="coord">33.2450,126.4190</span></td><td><span class="tag tag-spot">景点</span></td></tr>
-<tr><td><span class="emoji">🛒</span> 西归浦偶来市场</td><td><span class="coord">33.2503,126.5612</span></td><td><span class="tag tag-food">市场</span></td></tr>
-<tr><td><span class="emoji">🏛️</span> 牧官衙（市区古迹）</td><td><span class="coord">33.5140,126.5245</span></td><td><span class="tag tag-spot">景点</span></td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">标签</th></tr>
+<tr>
+  <td>咸德海水浴场</td>
+  <td><span class="coord">33.5443,126.6721</span></td>
+  <td><span class="gd-s">咸德海水浴场</span></td>
+  <td><span class="nv-s">함덕해수욕장</span></td>
+  <td><span class="tag t-spot">海滩</span></td>
+</tr>
+<tr>
+  <td>柱状节理带</td>
+  <td><span class="coord">33.2358,126.4274</span></td>
+  <td><span class="gd-s">柱状节理带</span></td>
+  <td><span class="nv-s">대포주상절리</span></td>
+  <td><span class="tag t-spot">火山奇观</span></td>
+</tr>
+<tr>
+  <td>天帝渊瀑布</td>
+  <td><span class="coord">33.2450,126.4190</span></td>
+  <td><span class="gd-s">天帝渊瀑布</span></td>
+  <td><span class="nv-s">천제연폭포</span></td>
+  <td><span class="tag t-spot">瀑布</span></td>
+</tr>
+<tr>
+  <td>偶来市场</td>
+  <td><span class="coord">33.2503,126.5612</span></td>
+  <td><span class="gd-s">西归浦偶来市场</span></td>
+  <td><span class="nv-s">서귀포매일올레시장</span></td>
+  <td><span class="tag t-food">市场</span></td>
+</tr>
 </table>
 
-<!-- ============ TOILETS ============ -->
-<h2>🚻 厕所救命坐标</h2>
+<!-- ============ 厕所救命 ============ -->
+<h2>🚻 厕所坐标</h2>
 <table>
-<tr><th>名称</th><th>坐标</th><th>备注</th></tr>
-<tr><td><span class="emoji">🚻</span> 酒店大堂厕所（出发前必用）</td><td><span class="coord">33.4868,126.4810</span></td><td>免费·干净</td></tr>
-<tr><td><span class="emoji">🚻</span> 新罗免税店厕所（4F人少）</td><td><span class="coord">33.4873,126.4840</span></td><td>免费·干净</td></tr>
-<tr><td><span class="emoji">🚻</span> 莲洞居民中心公厕（24h）</td><td><span class="coord">33.4875,126.4822</span></td><td>免费·24h</td></tr>
-<tr><td><span class="emoji">🚻</span> 星巴克（需消费小票密码）</td><td><span class="coord">33.4870,126.4815</span></td><td>消费后可用</td></tr>
-<tr><td><span class="emoji">🚻</span> 东门市场公厕</td><td><span class="coord">33.5135,126.5270</span></td><td>一般·应急用</td></tr>
-<tr><td><span class="emoji">🚻</span> 城山港售票大厅厕所</td><td><span class="coord">33.4750,126.9320</span></td><td>上船前必用</td></tr>
-<tr><td><span class="emoji">🚻</span> 狭才海滩停车场厕所</td><td><span class="coord">33.3985,126.2560</span></td><td>海滩旁</td></tr>
+<tr><th style="width:26%">名称</th><th style="width:17%">坐标</th><th style="width:24%"><span class="gd-s">高德搜</span></th><th style="width:24%"><span class="nv-s">Naver 搜</span></th><th style="width:9%">备注</th></tr>
+<tr><td>酒店大堂厕所</td><td><span class="coord">33.4868,126.4810</span></td><td colspan="2">大厅前台旁 · 出发前必用</td><td><span class="tag t-wc">免费</span></td></tr>
+<tr><td>新罗免税店4F厕所</td><td><span class="coord">33.4873,126.4840</span></td><td colspan="2">4楼人少不用排队</td><td><span class="tag t-wc">干净</span></td></tr>
+<tr><td>莲洞居民中心公厕</td><td><span class="coord">33.4875,126.4822</span></td><td colspan="2"><span class="nv-s">연동주민센터</span></td><td><span class="tag t-wc">24h免费</span></td></tr>
+<tr><td>星巴克保健路</td><td><span class="coord">33.4870,126.4815</span></td><td colspan="2">消费后小票有密码</td><td><span class="tag t-wc">需消费</span></td></tr>
+<tr><td>机场到达厅 1F</td><td><span class="coord">33.5067,126.4930</span></td><td colspan="2"><span class="nv-s">제주공항 1층</span></td><td><span class="tag t-wc">1号门内侧</span></td></tr>
+<tr><td>城山港售票大厅</td><td><span class="coord">33.4750,126.9320</span></td><td colspan="2"><span class="nv-s">성산항 화장실</span></td><td><span class="tag t-wc">上船前用</span></td></tr>
+<tr><td>狭才海滩停车场</td><td><span class="coord">33.3985,126.2560</span></td><td colspan="2"><span class="nv-s">협재해변 화장실</span></td><td><span class="tag t-wc">海滩旁</span></td></tr>
+<tr><td>天帝渊瀑布入口</td><td><span class="coord">33.2450,126.4190</span></td><td colspan="2"><span class="nv-s">천제연폭포 화장실</span></td><td><span class="tag t-wc">正门左侧</span></td></tr>
+<tr><td>偶来市场东南角</td><td><span class="coord">33.2503,126.5612</span></td><td colspan="2"><span class="nv-s">서귀포매일올레시장 화장실</span></td><td><span class="tag t-wc">停车场方向</span></td></tr>
 </table>
 
 <hr>
-<div style="text-align:center;color:#999;font-size:12px;margin:40px 0;">
-📍 坐标总计：<b>50+个点位</b> · WGS-84坐标系（Google Maps / 高德App / Naver Map通用）<br>
-💡 <b>最快方式：</b>手机上打开高德App → 搜索框粘贴坐标 → 收藏<br>
-💡 <b>最准方式：</b>Google My Maps创建地图 → 分享链接给全团<br>
-<a href="https://232999310-ctrl.github.io/jeju/">← 返回济州岛攻略主页</a>
+<div style="text-align:center;color:#999;font-size:12px;margin:30px 0;">
+📍 坐标总计：<b>50+个</b> | 全部WGS-84 | <span class="gd-s">高德App粘贴坐标搜</span> | <span class="nv-s">Naver搜韩文名最准</span><br>
+<a href="https://232999310-ctrl.github.io/jeju/">← 返回攻略主页</a>
 </div>
 
 </body>
